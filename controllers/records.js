@@ -16,19 +16,19 @@ router.delete('/:id', (req, res)=>{
 })
 //Update
 router.put('/:id', (req, res)=>{
-    Todos.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedRecord)=>{
+    Records.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedRecord)=>{
         res.json(updatedRecord)
     })
 })
 //Create
 router.post('/', (req, res)=>{
-    Todos.create(req.body, (err, createdRecord)=>{
+    Records.create(req.body, (err, createdRecord)=>{
         res.json(createdRecord) 
     })
 })
 //Show
 router.get('/:id', (req, res)=>{
-    Todos.findById(req.params.id, (err, foundRecord)=>{
+    Records.findById(req.params.id, (err, foundRecord)=>{
         res.json(foundRecord);
     })
 })
